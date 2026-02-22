@@ -156,6 +156,101 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .mig-val{font-family:var(--mono);font-size:26px;font-weight:600}
 .mig-note{font-family:var(--mono);font-size:9px;color:var(--td);margin-top:4px}
 .mig-arrow{font-size:22px;color:var(--td);text-align:center}
+
+/* ============================================================
+   MOBILE RESPONSIVE — all breakpoints
+============================================================ */
+
+/* Tablet: 768px and below */
+@media(max-width:768px){
+
+  /* HEADER — hide subtitle on small screens */
+  .hdr{padding:0 14px;height:50px}
+  .hdr-sub{display:none}
+  .hdr-div{display:none}
+  .hdr-logo{font-size:13px}
+  #last-updated{display:none}
+
+  /* NAV — scrollable horizontal tabs */
+  .nav{padding:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .tab{font-size:11px;padding:10px 14px;white-space:nowrap;flex-shrink:0}
+
+  /* MAIN padding */
+  .main{padding:14px 12px}
+
+  /* SECTION HEADERS */
+  .sh{font-size:10px;letter-spacing:.12em}
+
+  /* INDICATOR CARDS — force 2 columns on tablet */
+  .ic-grid.cols-4,.ic-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  .ic-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  .ic-val{font-size:24px}
+  .ic-label{font-size:10px;letter-spacing:.1em}
+
+  /* EXPAND PANEL — stack charts vertically */
+  .ep.open{max-height:1100px}
+  .ep-charts{flex-direction:column;padding:12px 14px}
+  .ep-cb:first-child{flex:none;border-right:none;border-bottom:1px solid var(--border);padding:0 0 14px 0;margin-right:0;margin-bottom:14px}
+  .ep-cb:last-child{padding:0}
+  .ep-stats{flex-wrap:wrap;padding:10px 14px}
+  .ep-stat{flex:0 0 50%;border-right:none;border-bottom:1px solid var(--border);padding:8px 0;text-align:left}
+  .ep-stat:last-child{border-bottom:none}
+  .ep-hdr{padding:10px 14px 9px}
+
+  /* INLINE 2-COL GRIDS (Politics, Demographics) — make responsive */
+  div[style*="grid-template-columns:1fr 1fr"]{display:grid!important;grid-template-columns:1fr!important}
+  /* INLINE 4-COL GRIDS — collapse to 2 col */
+  div[style*="grid-template-columns:repeat(4,1fr)"]{display:grid!important;grid-template-columns:repeat(2,1fr)!important}
+  /* LONDON BUBBLE 3-COL GRID */
+  div[style*="grid-template-columns:90px 1fr 1fr"]{grid-template-columns:70px 1fr 1fr!important}
+
+  /* POLL LEGEND — smaller text, tighter wrap */
+  .poll-legend{gap:8px}
+  .poll-legend-item{font-size:9px}
+
+  /* MIGRATION FLOW — stack vertically */
+  .mig-flow{flex-direction:column}
+  .mig-arrow{transform:rotate(90deg)}
+
+  /* CHART CARDS */
+  .cc{padding:12px}
+}
+
+/* Mobile: 480px and below */
+@media(max-width:480px){
+
+  /* HEADER */
+  .hdr{height:46px;padding:0 12px}
+  .hdr-logo{font-size:12px;letter-spacing:.08em}
+
+  /* NAV */
+  .tab{font-size:10px;padding:9px 12px}
+
+  /* MAIN */
+  .main{padding:10px 10px}
+
+  /* CARDS — single column on small phones */
+  .ic-grid.cols-4,.ic-grid.cols-3,.ic-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  .ic{padding:12px 10px 9px}
+  .ic-val{font-size:22px}
+  .ic-label{font-size:9px}
+  .ic-hint{font-size:9px}
+
+  /* EXPAND PANEL */
+  .ep.open{max-height:1300px}
+  .ep-title{font-size:11px}
+  .ep-sub{font-size:10px}
+  .rng-btn,.close-btn{font-size:9px;padding:4px 8px}
+  .ep-stat{flex:0 0 100%;padding:6px 0}
+  .ep-stat-v{font-size:13px}
+
+  /* POLL BAR — reduce font in segments */
+  .poll-seg{font-size:8px!important}
+
+  /* DEMOGRAPHICS WARNING BANNER */
+  div[style*="display:flex;align-items:center;gap:16px"]{flex-direction:column;gap:8px!important}
+}
 </style>
 </head>
 <body>
